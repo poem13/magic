@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mainmenu.mp3-9d708faa81ee11d643fc513044c738b7.mp3str"
+
+[deps]
+
+source_file="res://music/mainmenu.mp3"
+dest_files=[ "res://.import/mainmenu.mp3-9d708faa81ee11d643fc513044c738b7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

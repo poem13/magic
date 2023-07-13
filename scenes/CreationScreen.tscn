@@ -1,0 +1,189 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/creation_scene/CreationScreen.gd" type="Script" id=2]
+[ext_resource path="res://ui/alagard.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://ui/UI_Flat_Button_Large_Press_02a1.png" type="Texture" id=4]
+[ext_resource path="res://ui/CreationButton.tres" type="StyleBox" id=5]
+[ext_resource path="res://ui/CreationScreen_pressed.tres" type="StyleBox" id=6]
+[ext_resource path="res://ui/Pixeled.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://scenes/creation_scene/CreationFont.tres" type="DynamicFont" id=8]
+[ext_resource path="res://ui/theme_default/MainMenuFont.tres" type="DynamicFont" id=9]
+[ext_resource path="res://scenes/creation_scene/Continue.tres" type="StyleBox" id=10]
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 64, 32 )
+modulate_color = Color( 1, 1, 1, 0.705882 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 9
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 64, 32 )
+modulate_color = Color( 1, 1, 1, 0.705882 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 64, 32 )
+modulate_color = Color( 1, 1, 1, 0.705882 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 64, 32 )
+modulate_color = Color( 1, 1, 1, 0.705882 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 64, 32 )
+modulate_color = Color( 1, 1, 1, 0.705882 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 25
+outline_size = 1
+outline_color = Color( 0, 0.290196, 0.341176, 1 )
+extra_spacing_top = 4
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+
+[sub_resource type="StyleBoxTexture" id=12]
+
+[sub_resource type="StyleBoxTexture" id=14]
+
+[sub_resource type="StyleBoxTexture" id=15]
+
+[sub_resource type="DynamicFont" id=1]
+size = 21
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 4
+font_data = ExtResource( 3 )
+
+[node name="CreationScreen" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 16.0846, 9.05918 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 461, 148 )
+scale = Vector2( 5, 5 )
+script = null
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 122.0
+margin_top = 110.0
+margin_right = 295.0
+margin_bottom = 147.0
+size_flags_horizontal = 3
+
+[node name="Male" type="Button" parent="HBoxContainer"]
+margin_right = 84.0
+margin_bottom = 37.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 8 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Masculine"
+
+[node name="Female" type="Button" parent="HBoxContainer"]
+margin_left = 88.0
+margin_right = 173.0
+margin_bottom = 37.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Feminine"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 131.0
+margin_top = 161.0
+margin_right = 283.0
+margin_bottom = 229.0
+
+[node name="SkinButton" type="Button" parent="VBoxContainer"]
+margin_right = 152.0
+margin_bottom = 23.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 8 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Skin"
+
+[node name="EyesButton" type="Button" parent="VBoxContainer"]
+margin_top = 27.0
+margin_right = 152.0
+margin_bottom = 50.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 8 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Eyes"
+
+[node name="HairButton" type="Button" parent="VBoxContainer"]
+margin_top = 54.0
+margin_right = 152.0
+margin_bottom = 77.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 8 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Hair"
+
+[node name="BackButton" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 21.0
+margin_top = 321.0
+margin_right = 63.0
+margin_bottom = 341.0
+focus_mode = 0
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = ExtResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+text = "< - Back"
+
+[node name="ContinueButton" type="Button" parent="."]
+margin_left = 512.0
+margin_top = 319.0
+margin_right = 629.0
+margin_bottom = 353.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 9 )
+custom_styles/hover = ExtResource( 10 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "Continue"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 227.0
+margin_top = 38.0
+margin_right = 456.0
+margin_bottom = 66.0
+custom_fonts/font = SubResource( 1 )
+text = "Create your character"
+
+[connection signal="pressed" from="HBoxContainer/Male" to="." method="_on_Male_pressed"]
+[connection signal="pressed" from="HBoxContainer/Female" to="." method="_on_Female_pressed"]
+[connection signal="pressed" from="VBoxContainer/SkinButton" to="." method="_on_SkinButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/EyesButton" to="." method="_on_EyesButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HairButton" to="." method="_on_HairButton_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="ContinueButton" to="." method="_on_ContinueButton_pressed"]

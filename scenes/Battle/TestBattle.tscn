@@ -1,0 +1,543 @@
+[gd_scene load_steps=51 format=2]
+
+[ext_resource path="res://assets/enemy/snake/enemy-snake1.png" type="Texture" id=1]
+[ext_resource path="res://assets/enemy/snake/enemy-snake2.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Battle/TestBattle.gd" type="Script" id=3]
+[ext_resource path="res://entities/enemy/snake/snake.tres" type="Resource" id=4]
+[ext_resource path="res://scenes/Battle/TimedClickBar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ui/alagard.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://ui/theme_default/attack-normal.tres" type="StyleBox" id=7]
+[ext_resource path="res://ui/UI_Flat_Banner_01_Downward.png" type="Texture" id=8]
+[ext_resource path="res://scenes/Battle/battlefont.tres" type="DynamicFont" id=9]
+[ext_resource path="res://ui/UI_Flat_Button_Large_Lock_01a2.png" type="Texture" id=10]
+[ext_resource path="res://scenes/Battle/buttonpressed.tres" type="StyleBox" id=11]
+[ext_resource path="res://ui/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://entities/sidepic-skin2.png" type="Texture" id=13]
+[ext_resource path="res://entities/sidepic-skin3.png" type="Texture" id=14]
+[ext_resource path="res://assets/slash3.png" type="Texture" id=15]
+[ext_resource path="res://assets/slash1.png" type="Texture" id=16]
+[ext_resource path="res://assets/slash2.png" type="Texture" id=17]
+[ext_resource path="res://assets/enemy/snake/snake-damaged1.png" type="Texture" id=18]
+[ext_resource path="res://entities/sidepic-skin1.png" type="Texture" id=19]
+[ext_resource path="res://entities/closed1.png" type="Texture" id=20]
+[ext_resource path="res://entities/closed2.png" type="Texture" id=21]
+[ext_resource path="res://entities/closed3.png" type="Texture" id=22]
+[ext_resource path="res://entities/player/hair/sidehair1.png" type="Texture" id=23]
+[ext_resource path="res://entities/player/hair/sidehair2.png" type="Texture" id=24]
+[ext_resource path="res://entities/player/hair/sidehair4.png" type="Texture" id=25]
+[ext_resource path="res://entities/player/hair/sidehair3.png" type="Texture" id=26]
+[ext_resource path="res://entities/player/hair/sidehair5.png" type="Texture" id=27]
+[ext_resource path="res://entities/player/hair/sidehair7.png" type="Texture" id=28]
+[ext_resource path="res://entities/player/hair/sidehair6.png" type="Texture" id=29]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "damaged",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.133333, 0.721569, 0.0431373, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.128906, 0.128906, 0.128906, 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 14
+outline_size = 3
+outline_color = Color( 0, 0.290196, 0.341176, 1 )
+extra_spacing_top = 4
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.619608, 0.8, 0.890196, 1 )
+border_width_top = 1
+border_color = Color( 0.333333, 0.6, 0.745098, 1 )
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.109804, 0.67451, 0.113725, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.258824, 0.258824, 0.258824, 1 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 12
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "skin1",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "skin2",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "skin3",
+"speed": 1.0
+} ]
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "sidehair-1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "sidehair-2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "sidehair-3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "sidehair-4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ) ],
+"loop": true,
+"name": "sidehair-5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "sidehair-6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "sidehair-7",
+"speed": 5.0
+} ]
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 96, 32 )
+modulate_color = Color( 1, 1, 1, 0.705882 )
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 96, 32 )
+modulate_color = Color( 1, 1, 1, 0.705882 )
+
+[sub_resource type="StyleBoxTexture" id=16]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 96, 32 )
+modulate_color = Color( 1, 1, 1, 0.705882 )
+
+[sub_resource type="StyleBoxTexture" id=17]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 96, 32 )
+modulate_color = Color( 1, 1, 1, 0.705882 )
+
+[sub_resource type="StyleBoxTexture" id=18]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 96, 32 )
+modulate_color = Color( 1, 1, 1, 0.705882 )
+
+[sub_resource type="StyleBoxTexture" id=19]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 96, 32 )
+modulate_color = Color( 1, 1, 1, 0.705882 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 17
+outline_size = 1
+outline_color = Color( 0, 0.290196, 0.341176, 1 )
+extra_spacing_top = 4
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 30
+outline_size = 3
+outline_color = Color( 0, 0.290196, 0.341176, 1 )
+extra_spacing_top = 4
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="SpriteFrames" id=22]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 15 ), null ],
+"loop": false,
+"name": "slash",
+"speed": 5.0
+} ]
+
+[node name="TestBattle" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+enemy = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 15.983, 9.35833 )
+color = Color( 0.247059, 0.247059, 0.247059, 1 )
+
+[node name="EnemyContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = 1.0
+
+[node name="snake" type="AnimatedSprite" parent="EnemyContainer"]
+position = Vector2( 330, 161 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="ProgressBar2" type="ProgressBar" parent="EnemyContainer"]
+margin_right = 640.0
+margin_bottom = 14.0
+custom_styles/fg = SubResource( 7 )
+custom_styles/bg = SubResource( 8 )
+
+[node name="Label" type="Label" parent="EnemyContainer/ProgressBar2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 286.0
+margin_top = -3.0
+margin_right = -286.0
+margin_bottom = 4.0
+custom_fonts/font = SubResource( 9 )
+text = "HP: 25/50"
+align = 1
+
+[node name="PlayerPanel" type="Panel" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 2.0
+rect_scale = Vector2( 1.00517, -43.756 )
+custom_styles/panel = SubResource( 13 )
+
+[node name="PlayerData" type="HBoxContainer" parent="PlayerPanel"]
+margin_left = -3.0
+margin_right = 641.0
+margin_bottom = 2.0
+alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="PlayerPanel"]
+anchor_top = 0.082
+anchor_bottom = 0.087
+margin_left = 58.6965
+margin_top = 0.0638194
+margin_right = 631.697
+margin_bottom = 1.05382
+rect_scale = Vector2( 1, 0.29 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+value = 50.0
+percent_visible = false
+
+[node name="Label" type="Label" parent="PlayerPanel/ProgressBar"]
+margin_left = 1.06438
+margin_top = 0.715881
+margin_right = 82.0644
+margin_bottom = 15.7159
+rect_scale = Vector2( 0.867832, -0.0955872 )
+custom_fonts/font = SubResource( 20 )
+text = "HP: 25/50"
+align = 1
+
+[node name="ActionsPanel" type="Panel" parent="."]
+margin_top = 273.0
+margin_right = 641.0
+margin_bottom = 342.0
+custom_styles/panel = SubResource( 11 )
+
+[node name="sidepic" type="AnimatedSprite" parent="ActionsPanel"]
+position = Vector2( 57.1176, 23.1838 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 21 )
+animation = "skin1"
+frame = 1
+playing = true
+
+[node name="hair" type="AnimatedSprite" parent="ActionsPanel/sidepic"]
+frames = SubResource( 24 )
+animation = "sidehair-1"
+
+[node name="Actions" type="HBoxContainer" parent="ActionsPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 21.0
+margin_top = 6.0
+margin_right = 17.0
+margin_bottom = -3.0
+rect_scale = Vector2( 0.930468, 0.910663 )
+
+[node name="TextureRect" type="TextureRect" parent="ActionsPanel/Actions"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 96.0
+margin_bottom = 60.0
+texture = ExtResource( 8 )
+
+[node name="Analysis" type="Button" parent="ActionsPanel/Actions"]
+margin_left = 100.0
+margin_right = 186.0
+margin_bottom = 60.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 9 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/normal = ExtResource( 7 )
+text = "Analysis"
+
+[node name="Attack" type="Button" parent="ActionsPanel/Actions"]
+margin_left = 190.0
+margin_right = 276.0
+margin_bottom = 60.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 9 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/normal = ExtResource( 7 )
+text = "Attack"
+
+[node name="Defend" type="Button" parent="ActionsPanel/Actions"]
+margin_left = 280.0
+margin_right = 366.0
+margin_bottom = 60.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 9 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/normal = ExtResource( 7 )
+text = "Defend"
+
+[node name="Magic" type="Button" parent="ActionsPanel/Actions"]
+margin_left = 370.0
+margin_right = 456.0
+margin_bottom = 60.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 9 )
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/normal = ExtResource( 7 )
+text = "Magic"
+
+[node name="Inventory" type="Button" parent="ActionsPanel/Actions"]
+margin_left = 460.0
+margin_right = 546.0
+margin_bottom = 60.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 9 )
+custom_styles/hover = SubResource( 18 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/normal = ExtResource( 7 )
+text = "Inventory"
+
+[node name="Run" type="Button" parent="ActionsPanel/Actions"]
+margin_left = 550.0
+margin_right = 637.0
+margin_bottom = 60.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 9 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/normal = ExtResource( 7 )
+text = "Run"
+
+[node name="levelText" type="Label" parent="ActionsPanel"]
+margin_left = 112.0
+margin_top = -12.0
+margin_right = 186.0
+margin_bottom = 9.0
+custom_fonts/font = SubResource( 23 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 3.61383
+margin_top = 344.347
+margin_right = 99.6138
+margin_bottom = 384.347
+rect_scale = Vector2( 0.556675, 0.531052 )
+texture = ExtResource( 8 )
+
+[node name="name" type="Label" parent="TextureRect"]
+margin_left = 10.6445
+margin_top = -4.34528
+margin_right = 99.6445
+margin_bottom = 36.6547
+custom_fonts/font = SubResource( 12 )
+
+[node name="Textbox" type="Panel" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -87.0
+custom_styles/panel = SubResource( 6 )
+
+[node name="Label" type="Label" parent="Textbox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -34.0
+margin_bottom = -11.0
+custom_fonts/font = ExtResource( 9 )
+text = "A SNAKE appears!"
+align = 1
+valign = 1
+
+[node name="Ticker" type="Label" parent="Textbox"]
+margin_left = 608.0
+margin_top = 64.0
+margin_right = 624.0
+margin_bottom = 78.0
+text = ">>"
+
+[node name="Magic" type="Panel" parent="."]
+visible = false
+margin_left = 1.0
+margin_top = 15.0
+margin_right = 41.0
+margin_bottom = 55.0
+rect_scale = Vector2( 4.53487, 6.42412 )
+
+[node name="MagicContainer" type="VBoxContainer" parent="Magic"]
+margin_top = 0.311327
+margin_right = 127.221
+margin_bottom = 134.311
+rect_scale = Vector2( 0.314869, 0.234 )
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="Magic/MagicContainer"]
+margin_right = 127.0
+margin_bottom = 14.0
+text = "Types"
+align = 1
+
+[node name="Light" type="Button" parent="Magic/MagicContainer"]
+margin_top = 14.0
+margin_right = 127.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Light"
+
+[node name="Elemental" type="Button" parent="Magic/MagicContainer"]
+margin_top = 34.0
+margin_right = 127.0
+margin_bottom = 54.0
+text = "Elemental"
+
+[node name="Animus" type="Button" parent="Magic/MagicContainer"]
+margin_top = 54.0
+margin_right = 127.0
+margin_bottom = 74.0
+text = "Animus"
+
+[node name="Blood" type="Button" parent="Magic/MagicContainer"]
+margin_top = 74.0
+margin_right = 127.0
+margin_bottom = 94.0
+text = "Blood"
+
+[node name="Poison" type="Button" parent="Magic/MagicContainer"]
+margin_top = 94.0
+margin_right = 127.0
+margin_bottom = 114.0
+text = "Poison"
+
+[node name="Curative" type="Button" parent="Magic/MagicContainer"]
+margin_top = 114.0
+margin_right = 127.0
+margin_bottom = 134.0
+text = "Curative"
+
+[node name="movesContainer" type="VBoxContainer" parent="Magic"]
+visible = false
+margin_top = 2.33495
+margin_right = 132.0
+margin_bottom = 16.3349
+rect_scale = Vector2( 0.298332, 0.208799 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Magic/movesContainer"]
+margin_right = 132.0
+
+[node name="mainButton" type="Button" parent="Magic"]
+margin_top = 31.5997
+margin_right = 192.441
+margin_bottom = 51.5997
+rect_scale = Vector2( 0.207547, 0.161943 )
+text = "Magic Menu"
+
+[node name="closeButton" type="Button" parent="Magic"]
+margin_left = -0.441027
+margin_top = 36.2696
+margin_right = 192.0
+margin_bottom = 56.2696
+rect_scale = Vector2( 0.207547, 0.161943 )
+text = "Close"
+
+[node name="TimedClickBar" parent="." instance=ExtResource( 5 )]
+visible = false
+margin_left = 126.0
+margin_top = 108.0
+margin_right = 534.0
+margin_bottom = 230.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 328.519, 172.389 )
+rotation = -0.424234
+scale = Vector2( 1.00297, 0.978788 )
+frames = SubResource( 22 )
+
+[connection signal="pressed" from="ActionsPanel/Actions/Analysis" to="." method="_on_Analysis_pressed"]
+[connection signal="pressed" from="ActionsPanel/Actions/Attack" to="." method="_on_Attack_pressed"]
+[connection signal="pressed" from="ActionsPanel/Actions/Defend" to="." method="_on_Defend_pressed"]
+[connection signal="pressed" from="ActionsPanel/Actions/Magic" to="." method="_on_Magic_pressed"]
+[connection signal="pressed" from="ActionsPanel/Actions/Run" to="." method="_on_Run_pressed"]
+[connection signal="pressed" from="Magic/MagicContainer/Light" to="." method="_on_Light_pressed"]
+[connection signal="pressed" from="Magic/MagicContainer/Elemental" to="." method="_on_Elemental_pressed"]
+[connection signal="pressed" from="Magic/MagicContainer/Blood" to="." method="_on_Blood_pressed"]
+[connection signal="pressed" from="Magic/MagicContainer/Poison" to="." method="_on_Poison_pressed"]
+[connection signal="pressed" from="Magic/MagicContainer/Curative" to="." method="_on_Curative_pressed"]
+[connection signal="pressed" from="Magic/mainButton" to="." method="_on_mainButton_pressed"]
+[connection signal="pressed" from="Magic/closeButton" to="." method="_on_closeButton_pressed"]
